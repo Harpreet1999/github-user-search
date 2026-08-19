@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Space+Mono:wght@400;700&display=swap");
+
+body {
+  font-family: "Space Mono", monospace;
+  color: $white;
+  .main_body {
+    transition: $transition;
+    background-color: $dark-blue;
+    height: 100vh;
+    .main_container {
+      width: 62%;
+      max-width: 730px;
+      .header {
+        justify-content: space-between;
+        margin-bottom: 36px;
+        h3 {
+          font-size: 26px;
+          font-weight: bold;
+        }
+        .theme_btn {
+          .light_dark {
+            cursor: pointer;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 14px;
+            letter-spacing: 2px;
+          }
+          .icon {
+            padding-left: 10px;
+            font-size: 16px;
+          }
+        }
+      }
+      .search_bar {
+        transition: $transition;
+        background-color: $dull-blue;
+        justify-content: space-between;
+        padding: 8px;
+        border-radius: 15px;
+        margin-bottom: 18px;
+        .icon {
+          font-size: 24px;
+          color: $bright-blue;
+          margin: 0 24px 0 6px;
+        }
+        input {
+          width: 100%;
+          font-size: 18px;
+          margin-right: 10px;
+          padding: 5px 18px;
+          border-radius: 4px;
+          &:focus {
+            border: 2px solid $border;
+            border-radius: 6px;
+          }
+        }
+        ::placeholder {
+          color: $white;
+        }
+        button {
+          padding: 12px 24px;
+          background-color: $bright-blue;
+          border-radius: 10px;
+          font-weight: bold;
+        }
+      }
+      .search_result {
+        transition: $transition;
+        background-color: $dull-blue;
+        border-radius: 15px;
+        justify-content: start;
+        align-items: start;
+        padding: 45px;
+        .img_contain {
+          margin-right: 36px;
+          width: 117px;
+          height: 117px;
+          border-radius: 50%;
+          overflow: hidden;
+          img {
+            width: auto;
+            max-width: 100%;
+          }
+        }
+        .results {
+          flex: 1;
+          .basic_info {
+            .name_block {
+              justify-content: space-between;
+              h1 {
+                font-size: 26px;
+                font-weight: bold;
+              }
+              .date {
+                font-size: 15px;
+              }
+            }
+            .profile_link {
+              color: $bright-blue;
+            }
+            .bio {
+              font-size: 15px;
+              padding: 18px 0 36px 0;
+            }
+          }
+          .stats {
+            transition: $transition;
+            justify-content: space-between;
+            background-color: $dark-blue;
+            padding: 20px 36px;
+            border-radius: 10px;
+            .head {
+              font-size: 13px;
+              padding-bottom: 6px;
+            }
+            .value {
+              font-size: 22px;
+              font-weight: bold;
+            }
+          }
+          .links {
+            flex-wrap: wrap;
+            margin: 36px 0 4px 0;
+
+            .link {
+              flex: 50%;
+              margin-bottom: 14px;
+              .icon {
+                margin-right: 15px;
+              }
+              .link_text {
+                display: inline;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .light_theme {
+    // transition: all ease 0.3;
+    background-color: $light-back;
+    .main_container {
+      .header {
+        h3 {
+          color: $prim-color;
+        }
+        .theme_btn {
+          .light_dark {
+            color: $secon-color;
+          }
+          .icon {
+            color: $secon-color;
+          }
+        }
+      }
+      .search_bar {
+        transition: $transition;
+        background-color: $white;
+        box-shadow: $shadow;
+        input{
+          color: $prim-color;
+        }
+        ::placeholder {
+          color: $secon-color;
+        }
+      }
+      .search_result {
+        background-color: $white;
+        box-shadow: $shadow;
+        transition: $transition;
+        .results {
+          .basic_info {
+            .name_block {
+              h1 {
+                color: $prim-color;
+              }
+              .date {
+                color: $secon-color;
+              }
+            }
+            .bio {
+              color: $icon-color;
+            }
+          }
+          .stats {
+            background-color: $light-back;
+            .head {
+              color: $secon-color;
+            }
+            .value {
+              color: $prim-color;
+            }
+          }
+          .links {
+            .link {
+              .icon {
+                color: $icon-color;
+              }
+              .link_text {
+                color: $secon-color;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

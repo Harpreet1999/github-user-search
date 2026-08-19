@@ -1,0 +1,30 @@
+//Css Reset
+* {
+  all: unset;
+  display: revert;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+//Resetting Defaults
+
+//default styles
+.flexie {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
