@@ -64,6 +64,11 @@ body {
           font-weight: bold;
         }
       }
+      .error_msg {
+        color: #f26363;
+        margin: -8px 0 18px 0;
+        font-size: 14px;
+      }
       .search_result {
         transition: $transition;
         background-color: $dull-blue;

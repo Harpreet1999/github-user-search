@@ -131,6 +131,12 @@ body .main_body .main_container .search_bar button {
   font-weight: bold;
 }
 
+body .main_body .main_container .error_msg {
+  color: #f26363;
+  margin: -8px 0 18px 0;
+  font-size: 14px;
+}
+
 body .main_body .main_container .search_result {
   -webkit-transition: all 0.5s ease-in;
   transition: all 0.5s ease-in;

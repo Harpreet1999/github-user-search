@@ -6,13 +6,27 @@ export const MainScreen = () => {
   const [isLight, setIsLight] = useState(false);
   const [user, setUser] = useState("octocat");
   const [userData, setUserData] = useState([]);
+  const [error, setError] = useState("");
 
   const search_user = (username) => {
-    axios.get(`https://api.github.com/users/${username}`).then((response) => {
-      setUserData(response.data);
-    });
+    axios
+      .get(`https://api.github.com/users/${username}`)
+      .then((response) => {
+        setUserData(response.data);
+        setError("");
+      })
+      .catch((err) => {
+        if (err.response?.status === 404) {
+          setError("No results found for that username.");
+        } else if (err.response?.status === 403) {
+          setError(
+            "GitHub API rate limit exceeded. Please wait a bit and try again."
+          );
+        } else {
+          setError("Something went wrong. Please try again.");
+        }
+      });
   };
-  console.log("userdata", userData);
 
   return (
     <div
@@ -57,6 +71,7 @@ export const MainScreen = () => {
             Search
           </button>
         </div>
+        {error && <p className="error_msg">{error}</p>}
         <div className="search_result flexie">
           <div className="img_contain">
             <img
